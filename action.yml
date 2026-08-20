@@ -1,0 +1,31 @@
+name: Simple Changelog Report
+description: Generate changelog markdown for a tag or SHA range from commits or merged PRs.
+author: Dmytro Paduchak
+branding:
+  icon: list
+  color: purple
+inputs:
+  github-token:
+    description: Token to list commits/PRs and post comments.
+    required: false
+    default: ${{ github.token }}
+  base:
+    description: Base ref/SHA/tag (empty = PR base or previous tag).
+    required: false
+    default: ""
+  head:
+    description: Head ref/SHA (empty = PR head or current SHA).
+    required: false
+    default: ""
+  output-path:
+    description: Optional path to write the changelog markdown file.
+    required: false
+    default: ""
+runs:
+  using: node20
+  main: dist/index.js
+outputs:
+  changelog:
+    description: Generated changelog markdown.
+  entry-count:
+    description: Number of changelog entries.
