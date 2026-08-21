@@ -1,12 +1,12 @@
 name: Simple Changelog Report
-description: Generate changelog markdown for a tag or SHA range from commits or merged PRs.
+description: Generate changelog markdown for a tag or SHA range from commits.
 author: Dmytro Paduchak
 branding:
   icon: list
   color: purple
 inputs:
   github-token:
-    description: Token to list commits/PRs and post comments.
+    description: Token to list commits and post sticky comments.
     required: false
     default: ${{ github.token }}
   base:
@@ -24,8 +24,3 @@ inputs:
 runs:
   using: node20
   main: dist/index.js
-outputs:
-  changelog:
-    description: Generated changelog markdown.
-  entry-count:
-    description: Number of changelog entries.
