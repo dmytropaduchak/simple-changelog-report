@@ -1,4 +1,4 @@
-name: Simple Changelog Report
+name: Simple Changelog Digest
 description: Generate changelog markdown for a tag or SHA range from commits.
 author: Dmytro Paduchak
 branding:
